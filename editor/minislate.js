@@ -4534,12 +4534,25 @@ var editor = new Minislate.simpleEditor(element);
 
 window.addEventListener('load', ()=>{
 
-    var gettingItem = window.localStorage.getItem('tslPapier');
+    const gettingItem = window.localStorage.getItem('tslPapier');
 
     if(gettingItem && gettingItem!=""){
         document.querySelector('.editable').innerHTML = gettingItem;
     }else{
         document.querySelector('.editable').innerHTML = "<center><h1>THE BOARD</h1><p>Just start typing to scribble anything on the board, use it as todo, planning pad, notes anything.</p><p><br></p></center><ul><li>Simple</li><li>Easy<br></li><li>Formatting options(float over buttons)</li></ul><p><b>Procedure</b></p><p>Just click anywhere and start typing</p><p>Use float over buttons to format your text.</p><p>Paste image URLs to display pics you want.<br></p><p><br></p>"
+    }
+
+    const getMode = window.localStorage.getItem('tslPapierMode');
+
+    if(getMode && getMode!=""){
+        document.getElementById('toggleMode').setAttribute('data-mode', getMode);
+        document.getElementById('toggleMode').click();
+    }
+
+    const getFont = window.localStorage.getItem('tslPapierFont');
+
+    if(getFont && getFont!=""){
+        document.querySelector(`[data-content="${getFont}"]`).click()
     }
 
 });
@@ -4551,4 +4564,28 @@ document.addEventListener("keyup",(event)=>{
 
     if(event.keyCode==27)
         setTimeout(()=>{editor.hideToolbar();},300);
+});
+
+// night-mode handle
+document.getElementById('toggleMode').addEventListener('click', event => {
+    const mode = event.target.getAttribute('data-mode');
+    window.localStorage.setItem('tslPapierMode', mode);
+
+    if(mode == 'day'){
+        document.body.className="nightMode";
+        event.target.setAttribute('data-mode', 'night');
+    }
+    else if(mode == 'night'){
+        document.body.className="dayMode";
+        event.target.setAttribute('data-mode', 'day');
+    }
+});
+
+// font-size habndle
+document.getElementById('fontChange').addEventListener('click', event => {
+    const newFont = event.target.getAttribute('data-content');
+    window.localStorage.setItem('tslPapierFont', newFont);
+    document.querySelectorAll('.actions .active').forEach(node => node.className = '');
+    event.target.className= 'active';
+    document.body.style.fontSize = newFont + 'px';
 });

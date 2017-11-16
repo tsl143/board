@@ -1,15 +1,26 @@
+body {
+    font-family: arial;
+    font-size: 18px;
+}
+
+.nightMode {
+  background: #444;
+  color: #fff;
+}
+
 .editable {
     color: #424e5a;
     padding: 20px 20%;
     margin: 0 auto;
     width: 60%;
     height: 100vh;
-    font-size: 18px;
     outline: 0;
 }
-body {
-    font-family: arial;
+
+.nightMode .editable {
+  color: #fff;
 }
+
 .editable p {
     margin: 5px;
 }
@@ -1726,4 +1737,54 @@ body {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
+}
+
+.actions{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 5;
+}
+.actions a {
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #888;
+  position: relative;
+  text-align: center;
+  vertical-align: bottom;
+  margin-left: 10px;
+}
+
+#fontChange a:first-child{
+  font-size: 14px;
+}
+
+#fontChange a:nth-child(2){
+  font-size: 16px;
+}
+
+#fontChange a:nth-child(3){
+  font-size: 18px;
+}
+
+#fontChange a:nth-child(4){
+  font-size: 20px;
+}
+
+#fontChange a.active{
+  background: #888;
+  color: #fff;
+}
+.nightMode #fontChange a.active{
+  background: #fff;
+  color: #888;
+}
+
+#toggleMode {
+    margin: 0 10px 0 0;
+    font-size: 30px;
+    border: 0;
 }
