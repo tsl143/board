@@ -4539,7 +4539,7 @@ window.addEventListener('load', ()=>{
     if(gettingItem && gettingItem!=""){
         document.querySelector('.editable').innerHTML = gettingItem;
     }else{
-        document.querySelector('.editable').innerHTML = "<center><h1>THE BOARD</h1><p>Just start typing to scribble anything on the board, use it as todo, planning pad, notes anything.</p><p><br></p></center><ul><li>Simple</li><li>Easy<br></li><li>Formatting options(float over buttons)</li></ul><p><b>Procedure</b></p><p>Just click anywhere and start typing</p><p>Use float over buttons to format your text.</p><p>Paste image URLs to display pics you want.<br></p><p><br></p>"
+        document.querySelector('.editable').innerHTML = "<center><h1>HAPPY BIRTHDAY JAAAAAAAAN! <3 <3 <3</h1>"
     }
 
     const getMode = window.localStorage.getItem('tslPapierMode');
