@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Board: Papier for Firefox",
   "description": "Just start typing to scribble anything on the board, use it as todo, planning pad, notes anything.",
-  "version": "1.7",
+  "version": "1.8",
   "homepage_url": "https://github.com/tsl143/jsDemos/board_webext",
 
   "icons": {
