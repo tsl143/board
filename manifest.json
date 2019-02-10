@@ -3,7 +3,12 @@
   "name": "Board: Papier for Firefox",
   "description": "Just start typing to scribble anything on the board, use it as todo, planning pad, notes anything.",
   "version": "1.7",
-  "homepage_url": "https://github.com/tsl143/jsDemos/board_webext",
+  "homepage_url": "https://github.com/tsl143/board",
+  "applications": {
+    "gecko": {
+      "strict_min_version": "55.0"
+    }
+  },
 
   "icons": {
     "32": "icons/logo_32.png",
@@ -11,9 +16,13 @@
     "64": "icons/logo_64.png"
   },
 
+  "background": {
+    "scripts": ["bg.js"]
+  },
+
   "web_accessible_resources": ["index.html", "editor/*"],
 
-  "permissions": ["activeTab", "tabs"],
+  "permissions": ["topSites"],
 
   "chrome_url_overrides": {
     "newtab": "index.html"

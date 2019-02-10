@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>The Board</title>
-  <link rel="stylesheet" href="editor/minislate-full.css" />
-</head>
-<body>
-<div class="editable" id="theBoard"></div>
-<div class="actions">
-	<a id="toggleMode" data-mode="day">&#128161;</a><span id="fontChange"><a data-content="14">A</a><a data-content="16">A</a><a class="active" data-content="18">A</a><a data-content="20">A</a></span>
-</div>
-</body>
-<script src="editor/minislate.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Board</title>
+    <link rel="stylesheet" href="editor/quill.snow.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="theBoard"></div>
+    </div>
+    <div id="topSites"></div>
+  </body>
+  <script src="editor/quill.min.js"></script>
+  <script src="editor/magic.js"></script>
 </html>
